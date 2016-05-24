@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Type some text</title>
+    <link href="main.css" rel="stylesheet" />
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        var txt = document.getElementById('textinput');
+        txt.addEventListener('input', function(e) {
+          var elH = e.target.scrollHeight;
+          var lh = parseInt(document.defaultView.getComputedStyle(e.target).fontSize);
+          var pct = lh / elH;
+          var vh = pct * 100;
+
+          console.log(vh);
+
+          e.target.style.fontSize = vh + 'vh';
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="textinput" contenteditable="true"></div>
+  </body>
+</html>

@@ -3,23 +3,18 @@
   <head>
     <title>Type some text</title>
     <link href="main.css" rel="stylesheet" />
+    <script src="fluid-text.js"></script>
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {
         var txt = document.getElementById('textinput');
-        txt.addEventListener('input', function(e) {
-          var elH = e.target.scrollHeight;
-          var lh = parseInt(document.defaultView.getComputedStyle(e.target).fontSize);
-          var pct = lh / elH;
-          var vh = pct * 100;
-
-          console.log(vh);
-
-          e.target.style.fontSize = vh + 'vh';
-        });
+        txt.addEventListener('input', resizeText);
+        resizeText({target: txt});
+        txt.focus();
       });
     </script>
   </head>
   <body>
+    <!--  style="font-size: 200px; line-height: 200px;" -->
     <div id="textinput" contenteditable="true"></div>
   </body>
 </html>

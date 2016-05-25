@@ -8,6 +8,6 @@ body {
 }
 
 #textinput {
+  text-align: center;
   outline: none;
-  font-size: 25vh;
 }
